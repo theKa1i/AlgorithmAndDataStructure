@@ -10,11 +10,11 @@ public class RadixSort {
 
     public static int maxbits(int[] arr){
         int max = Integer.MIN_VALUE;
-        for (int i = 0; i < arr.length; i++) {
-            max = Math.max(max, arr[i]);
+        for (int j : arr) {
+            max = Math.max(max, j);
         }
         int res = 0;
-        while(res != 0){
+        while(max != 0){
             res++;
             max /= 10;
         }
@@ -34,7 +34,7 @@ public class RadixSort {
             for (i = 1; i < radix; i++){
                 count[i] = count[i - 1] + count[i];
             }
-            for (i = right; i >= left; i++){
+            for (i = right; i >= left; i--){
                 j = arr[i] / ((int)Math.pow(radix, d - 1)) % radix;
                 temp[count[j] - 1] = arr[i];
                 count[j]--;
