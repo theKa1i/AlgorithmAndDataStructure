@@ -8,14 +8,14 @@ public class LCR_016 {
         int[] cnt = new int[256];
         int l = 0, r = 0;
         while (r < s.length()){
-            int index = s.charAt(r) - '\0';
+            int index = s.charAt(r);
             if (cnt[index] <= 0) {
                 cnt[index]++;
                 r++;
                 res = Math.max(res, r - l);
                 continue;
             } else {
-                cnt[s.charAt(l) - '\0']--;
+                cnt[s.charAt(l)]--;
                 l++;
             }
         }
