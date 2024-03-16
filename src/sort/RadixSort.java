@@ -39,6 +39,10 @@ public class RadixSort {
                 temp[count[j] - 1] = arr[i];
                 count[j]--;
             }
+
+            for (int k = left; k <= right; k++) {
+                arr[k] = temp[k - left];
+            }
         }
     }
 }
